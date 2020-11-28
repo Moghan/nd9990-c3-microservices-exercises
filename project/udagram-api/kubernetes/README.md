@@ -6,6 +6,8 @@ eksctl create cluster \
 --nodegroup-name linux-nodes \
 --nodes 2
 
+aws eks --region <region-code> update-kubeconfig --name <cluster_name>
+
 # nginx ingress
 
 from: https://kubernetes.github.io/ingress-nginx/deploy/
