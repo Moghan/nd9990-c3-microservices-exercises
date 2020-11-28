@@ -10,7 +10,7 @@ spec:
     app: feed-backend
   ports:
     - protocol: TCP
-      port: 80
+      port: 8080
       targetPort: 8080
 ---
 apiVersion: apps/v1

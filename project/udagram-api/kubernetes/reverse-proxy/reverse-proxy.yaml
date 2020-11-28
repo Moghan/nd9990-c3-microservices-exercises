@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: reverse-proxy
+  name: reverse-proxy-svc
+  namespace: udagram
+spec:
+  ports:
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
+  selector:
+    service: reverse-proxy
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: reverse-proxy
+  name: reverse-proxy
+  namespace: udagram
+spec:
+  replicas: 1
+  selector:
+      matchLabels:
+        service: reverse-proxy
+  template:
+    metadata:
+      labels:
+        service: reverse-proxy
+    spec:
+      containers:
+      - image: ybsnek/udagram-reverse-proxy
+        name: reverse-proxy
+        imagePullPolicy: Always            
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always

@@ -1,7 +1,7 @@
 # Setting up cluster
 
 eksctl create cluster \
---name udagram-cluster \
+--name udagram2-cluster \
 --region eu-north-1 \
 --nodegroup-name linux-nodes \
 --nodes 2
