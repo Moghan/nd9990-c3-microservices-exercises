@@ -4,7 +4,7 @@ node_js:
 
 services:
   - docker
-  
+
 before_install:
   - pyenv global 3.7.1
   - pip install -U pip
@@ -17,6 +17,9 @@ install:
   - sudo mv ./kubectl /usr/local/bin/kubectl
   - mkdir ${HOME}/.kube
   - echo "$KUBE_CONFIG" | base64 --decode > ${HOME}/.kube/config
+  - mkdir ${HOME}/.aws
+  - echo "$AWS_CREDENTIALS" | base64 --decode > ${HOME}/.aws/credentials
+  - echo "$AWS_CONFIG" | base64 --decode > ${HOME}/.aws/config
 # Scripts to be run such as tests
 before_script:
   - echo "no tests"
