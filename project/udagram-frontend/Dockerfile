@@ -1,8 +1,8 @@
-FROM node:12 AS builder
+FROM beevelop/ionic AS builder
 
 WORKDIR /app
 COPY . .
-RUN npm ci && npm run build
+RUN npm ci && ionic build
 
 FROM nginx:alpine
 # Set working directory to nginx asset directory

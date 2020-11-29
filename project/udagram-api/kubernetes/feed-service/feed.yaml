@@ -47,7 +47,7 @@ spec:
         - name: JWT_SECRET
           value: hello
         - name: URL
-          value: http://localhost:4200
+          value: http://localhost:8011
         - name: AWS_BUCKET
           value: udagram-ybsnek-dev
         - name: AWS_REGION

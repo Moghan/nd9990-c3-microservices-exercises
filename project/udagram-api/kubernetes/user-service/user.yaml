@@ -47,4 +47,4 @@ spec:
         - name: JWT_SECRET
           value: hello
         - name: URL
-          value: http://localhost:4200
+          value: http://localhost:8011
