@@ -4,7 +4,11 @@ node_js:
 
 services:
   - docker
-
+  
+before_install:
+  - pyenv global 3.7.1
+  - pip install -U pip
+  - pip install awscli
 # Pre-testing installs
 install:
   - echo "nothing needs to be installed"
